@@ -31,6 +31,8 @@ public class PlayerAgent {
     public String playerName = "Human";
     public int playerChoice = 0;
     public int winRecord = 0;
+    public int lossRecord = 0;
+    public int drawRecord = 0;
 
     public PlayerAgent() {
         // initializes a player with default values
@@ -67,8 +69,27 @@ public class PlayerAgent {
                 return "Something went wrong";
         }
     }
+    
+    public void isWinner() {
+        this.winRecord++;
+    }
+    
+    public void isLoser() {
+        this.lossRecord++;
+    }
+    
+    public void isDraw() {
+        this.drawRecord++;
+    }
+    
+    public String getRecord() {
+        String returnString = String.format("W - L - D\n%d - %d - %d",
+                this.winRecord, this.lossRecord, this.drawRecord);
+        return returnString;
+    }
 
-    private void setComputerChoice() {
+    
+    public void setComputerChoice() {
         randomGen = new Random();
         this.playerChoice = randomGen.nextInt(3);
     }

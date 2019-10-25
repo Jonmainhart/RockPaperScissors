@@ -25,12 +25,15 @@ import java.util.Scanner;
  * @author jonmainhart
  */
 public class rps {
+    
+    // initialize players
+        
+        static PlayerAgent player1 = new PlayerAgent();
+        static PlayerAgent player2 = new PlayerAgent();
+
 
     public static void main(String[] args) {
-        // initialize players
-        PlayerAgent player1 = new PlayerAgent();
-        PlayerAgent player2 = new PlayerAgent();
-
+        
         // set player 2 to computer opponent
         player2.initializeComputerOpponent();
 
@@ -48,6 +51,7 @@ public class rps {
         }
 
         do {
+            player2.setComputerChoice();
             System.out.println("\nPlease choose from the following choices:\n"
                     + "1. Rock\n2. Paper\n3. Scissors\nOr select 'q' to quit.\n");
             String menuSelection = scannerIn.next();
@@ -88,6 +92,8 @@ public class rps {
         } while (menuIsActive);
 
         System.out.println("Thank you for playing Rock, Paper, Scissors!");
+        System.out.printf("%s's Record\n%s\n", player1.getPlayerName(), player1.getRecord());
+        System.out.printf("%s's Record\n%s\n", player2.getPlayerName(), player2.getRecord());
 
     } // end main
 

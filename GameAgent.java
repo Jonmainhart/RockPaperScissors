@@ -37,7 +37,7 @@ public class GameAgent {
         GameAgent.player1WeaponValue = player1Weapon;
         GameAgent.player2WeaponValue = player2Weapon;
     }
-    
+
     public void resetGame() {
         GameAgent.player1WeaponValue = 5;
         GameAgent.player2WeaponValue = 5;
@@ -47,30 +47,57 @@ public class GameAgent {
         switch (player1WeaponValue) {
             case 0:
                 if (player2WeaponValue == 0) {
+                    // draw
+                    rps.player1.isDraw();
+                    rps.player2.isDraw();
                     return "It's a draw!";
                 } else if (player2WeaponValue == 1) {
+                    // player 2 wins
+                    rps.player1.isLoser();
+                    rps.player2.isWinner();
                     return "Paper beats Rock. Player 2 wins.";
                 } else if (player2WeaponValue == 2) {
+                    // player 1 wins
+                    rps.player1.isWinner();
+                    rps.player2.isLoser();
                     return "Rock beats Scissors. Player 1 wins. ";
                 } else {
                     return "Something is wrong.";
                 }
             case 1:
                 if (player2WeaponValue == 0) {
+                    // player 1 wins
+                    rps.player1.isWinner();
+                    rps.player2.isLoser();
                     return "Paper beats Rock. Player 1 wins.";
                 } else if (player2WeaponValue == 1) {
+                    // draw
+                    rps.player1.isDraw();
+                    rps.player2.isDraw();
                     return "It's a draw!";
                 } else if (player2WeaponValue == 2) {
+                    // player 2 wins
+                    rps.player1.isLoser();
+                    rps.player2.isWinner();
                     return "Scissors beats paper. Player 2 wins.";
                 } else {
                     return "Something is wrong.";
                 }
             case 2:
                 if (player2WeaponValue == 0) {
+                    // player 2 wins
+                    rps.player1.isLoser();
+                    rps.player2.isWinner();
                     return "Rock beats Scissors. Player 2 wins.";
                 } else if (player2WeaponValue == 1) {
+                    // player 1 wins
+                    rps.player1.isWinner();
+                    rps.player2.isLoser();
                     return "Scissors beats Paper. Player 1 wins.";
                 } else if (player2WeaponValue == 2) {
+                    // draw
+                    rps.player1.isDraw();
+                    rps.player2.isDraw();
                     return "It's a draw!";
                 } else {
                     return "Something is wrong.";
