@@ -8,7 +8,7 @@ I created this as a fun way to pass the time while sitting in an airport for a f
 - Choose from an array of weapons like rocks, paper, and scissors!
 - Play against your favorite (and only) computer opponent!
 - Gloat to your friends in 1970 about how you have the latest RPS game on the market!
-- Keeps score so you can shwo the world how superior you are to a simple machine!
+- Keeps score so you can show the world how superior you are to a simple machine!
 
 Enjoy!
 
