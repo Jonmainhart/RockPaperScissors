@@ -25,15 +25,13 @@ import java.util.Scanner;
  * @author jonmainhart
  */
 public class rps {
-    
-    // initialize players
-        
-        static PlayerAgent player1 = new PlayerAgent();
-        static PlayerAgent player2 = new PlayerAgent();
 
+    // initialize players
+    static PlayerAgent player1 = new PlayerAgent();
+    static PlayerAgent player2 = new PlayerAgent();
 
     public static void main(String[] args) {
-        
+
         // set player 2 to computer opponent
         player2.initializeComputerOpponent();
 
@@ -71,22 +69,28 @@ public class rps {
                         break;
                     default:
                         System.out.println("Please make a valid selection.");
+                        player1.setPlayerChoice(99);
                 }
+                // Validates user input is within range
                 // send weapon choices to GameAgent to determine winner
-                GameAgent newGame = new GameAgent(player1.playerChoice, player2.playerChoice);
-                // Display results
-                System.out.printf("\nIt's %s vs. %s!\n"
-                        + "%s has selected %s\n"
-                        + "%s has selected %s\n",
-                        player1.getPlayerName(),
-                        player2.getPlayerName(),
-                        player1.getPlayerName(),
-                        player1.getPlayerWeapon(),
-                        player2.getPlayerName(),
-                        player2.getPlayerWeapon());
-                System.out.println(newGame.getWinner());
-                newGame.resetGame();
+                if (player1.playerChoice < 3) {
+                    GameAgent newGame = new GameAgent(player1.playerChoice, player2.playerChoice);
 
+                    // Display results
+                    System.out.printf("\nIt's %s vs. %s!\n"
+                            + "%s has selected %s\n"
+                            + "%s has selected %s\n",
+                            player1.getPlayerName(),
+                            player2.getPlayerName(),
+                            player1.getPlayerName(),
+                            player1.getPlayerWeapon(),
+                            player2.getPlayerName(),
+                            player2.getPlayerWeapon());
+                    System.out.println(newGame.getWinner());
+                    newGame.resetGame();
+                } else {
+                    System.out.println("User input is out of range. please try again.");
+                }
             }
 
         } while (menuIsActive);

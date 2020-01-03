@@ -55,12 +55,12 @@ public class GameAgent {
                     // player 2 wins
                     rps.player1.isLoser();
                     rps.player2.isWinner();
-                    return "Paper beats Rock. Player 2 wins.";
+                    return "Paper beats Rock. Computer wins.";
                 } else if (player2WeaponValue == 2) {
                     // player 1 wins
                     rps.player1.isWinner();
                     rps.player2.isLoser();
-                    return "Rock beats Scissors. Player 1 wins. ";
+                    return "Rock beats Scissors. YOU WIN! ";
                 } else {
                     return "Something is wrong.";
                 }
@@ -69,7 +69,7 @@ public class GameAgent {
                     // player 1 wins
                     rps.player1.isWinner();
                     rps.player2.isLoser();
-                    return "Paper beats Rock. Player 1 wins.";
+                    return "Paper beats Rock. YOU WIN!";
                 } else if (player2WeaponValue == 1) {
                     // draw
                     rps.player1.isDraw();
@@ -79,7 +79,7 @@ public class GameAgent {
                     // player 2 wins
                     rps.player1.isLoser();
                     rps.player2.isWinner();
-                    return "Scissors beats paper. Player 2 wins.";
+                    return "Scissors beats paper. Computer wins.";
                 } else {
                     return "Something is wrong.";
                 }
@@ -88,12 +88,12 @@ public class GameAgent {
                     // player 2 wins
                     rps.player1.isLoser();
                     rps.player2.isWinner();
-                    return "Rock beats Scissors. Player 2 wins.";
+                    return "Rock beats Scissors. Computer wins.";
                 } else if (player2WeaponValue == 1) {
                     // player 1 wins
                     rps.player1.isWinner();
                     rps.player2.isLoser();
-                    return "Scissors beats Paper. Player 1 wins.";
+                    return "Scissors beats Paper. YOU WIN!";
                 } else if (player2WeaponValue == 2) {
                     // draw
                     rps.player1.isDraw();
