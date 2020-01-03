@@ -83,8 +83,12 @@ public class PlayerAgent {
     }
     
     public String getRecord() {
-        String returnString = String.format("W - L - D\n%d - %d - %d",
-                this.winRecord, this.lossRecord, this.drawRecord);
+        double winPercentage;
+        double adjustedWins = ((double) this.winRecord + ((double) this.drawRecord * 0.5));
+        double gamesPlayed = ((double) this.winRecord + this.lossRecord + this.drawRecord);
+        winPercentage = adjustedWins / gamesPlayed;
+        String returnString = String.format("W - L - D - WinPct\n%d - %d - %d - %.3f",
+                this.winRecord, this.lossRecord, this.drawRecord, winPercentage);
         return returnString;
     }
 
